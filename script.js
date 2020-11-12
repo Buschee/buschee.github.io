@@ -14,7 +14,7 @@
   (height < 400) ? height = 400 : height;
 
   background.width = width * 0.99;
-  background.height = height * 0.4;
+  background.height = height;
 
   function Terrain(options) {
       options = options || {};
