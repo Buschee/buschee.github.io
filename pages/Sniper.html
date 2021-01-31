@@ -71,17 +71,19 @@
 
         <div class="section-title">
           <h2>Sniper - Writeup</h2>
-            <img src="../htb/OpenAdmin/img/openadmin_banner.JPG">
+            <img src="../htb/Sniper/img/sniper_banner.JPG">
             <br><br>
             
             <h2>Introduction</h2>
             <p></p>
             <br><br>
             <h2>Basic enumeration</h2>
-            <p></p>
+            <p>First of all we are going to start with a simple nmap scan, that allows us to show all forwarded ports of the targeted machine. The -sC parameter is used to perform a scan using the default set of scripts. The -sV parameter is used to perform an automated version scan of the targeted machine. The -p- argument is used to perform a network scan of all available 65,535 TCP ports of that server. -oN is used to store the result of the scan in a locally saved file. </p>
             <br>
             <?prettify linenums=1?>
-            <pre class="prettyprint"></pre>
+            <pre class="prettyprint">nmap -sC -sV -p- -oN full 10.10.10.151 -v</pre>
+            <br>
+            
 
             
           </div>
