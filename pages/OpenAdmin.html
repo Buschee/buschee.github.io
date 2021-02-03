@@ -71,7 +71,7 @@
 
         <div class="section-title">
           <h2>OpenAdmin - Writeup</h2>
-            <img src="../htb/OpenAdmin/img/openadmin_banner.JPG">
+            <img src="../htb/OpenAdmin/img/openadmin_banner.JPG" class="img-fluid">
             <br><br>
             
             <h2>Introduction</h2>
@@ -110,23 +110,23 @@ Service detection performed. Please report any incorrect results at https://nmap
             
         <p>Before accessing the website we are going to start a dirbuster scan, to perform a brute force attack, to find valid pages of the website. As targeted URL we are going to use: http://10.10.10.171:80/. The wordlist that we are going to use, is the medium-sized list that comes with the dirbuster installation.</p>
         <br>
-        <img src="../htb/OpenAdmin/img/openadmin_dirbuster.JPG">
+        <img src="../htb/OpenAdmin/img/openadmin_dirbuster.JPG" class="img-fluid">
         <br><br>
         <p>After about 5 minutes we can take a look at the result of the brute force. We can quickly see that there are some subpages, called music, ona, and sierra. In this case the ona page was the most interesting part, but we will still take a closer look to the other pages aswell. </p>
         <br>
-        <img src="../htb/OpenAdmin/img/openadmin_dirbuster_finished.JPG">
+        <img src="../htb/OpenAdmin/img/openadmin_dirbuster_finished.JPG" class="img-fluid">
         <br><br>
         <p>If we just access the standard port 80 page we can see the standard Apache website, so there is nothing interesting in this place.</p>
         <br>
-        <img src="../htb/OpenAdmin/img/openadmin_port_80.JPG">
+        <img src="../htb/OpenAdmin/img/openadmin_port_80.JPG" class="img-fluid">
         <br><br>
         <p>When trying to access the subpage /music we can see the following content. Here is nothing too interesting for us, atleast nothing that is exploitable for us, same goes for /artwork and /sierra.</p>
         <br>
-        <img src="../htb/OpenAdmin/img/openadmin_music.JPG">
+        <img src="../htb/OpenAdmin/img/openadmin_music.JPG" class="img-fluid">
         <br><br>
         <p>There is only one thing that could be interesting for us, if we click on the login button of the menu, we get forwarded to a completly different subdirectory which is called /ona. After some research I found out that this application is called OpenNetAdmin. We can also see some very interesting information, like the current used version, etc. OpenNetAdmin provides a database managed inventory of the IP network. Every single host, subnet and IP address can be tracked via a centralized AJAX enabled web interface. </p>
         <br>
-        <img src="../htb/OpenAdmin/img/openadmin_ona.JPG">
+        <img src="../htb/OpenAdmin/img/openadmin_ona.JPG" class="img-fluid">
         <br><br>
         <h2>Exploit OpenNetAdmin v18.1.1</h2>
         <p>As already mentioned we can see some very valuable information of OpenNetAdmin like the version, which is v18.1.1. We can use this information to check for existing exploits on the internet. In this case I used Exploit-DB to search for exploits. The first entry that I found was a RCE (Remote Code Execution) which can be found here:<br><br>
