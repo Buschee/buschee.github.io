@@ -73,7 +73,6 @@
           <h2>OpenAdmin - Writeup</h2>
             <img src="../htb/OpenAdmin/img/openadmin_banner.JPG" class="img-fluid">
             <br><br>
-            
             <h2>Introduction</h2>
             <p>OpenAdmin is an easy rated machine from HackTheBox. The box is pretty straight forward, but it still got a few rabbit holes. First we are going to find a webdirectory that hosts an application called Opennetadmin, which is vulnerable to multiple exploits. We will use a RCE that allows us to get a shell on the targeted system. After that, we can enumerate the system to find credentials of the database for the user ona_admin. This credentials will be used to get access to the local installed MySQL-database. On the database we will find two password hashes. We are going to crack those hashes to finally be able to authenticate as user jimmy. From this point we will find a the locally running port "52846", which is going to help us to find the private SSH-key for the user joanna. This key will be cracked with the help of ssh2john to get a valid password to authenticate as joanna and to finally obtain the user flag. To escalate our privileges to root we have to enumerate the system, to find that joanna is allowed to run /bin/nano as root (sudo). With the help of GTFOBins, this is a relatively easy privilege escalation to authenticate yourself as user root. </p>
             <br><br>
